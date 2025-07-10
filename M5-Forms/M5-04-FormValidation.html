@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero to Hero: Bootstrap ~ M5-04</title>
+    <link href="./assets/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="m-3">
+
+<h1 class="mb-5">Form Validation</h1>
+<form class="" novalidate>
+    <div class="mb-3">
+      <label for="n" class="form-label">Full Name</label>
+      <input required type="text" class="form-control" id="n">
+      <div class="invalid-feedback">
+        Please enter your name.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="e" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="e">
+    </div>
+
+    <div class="mb-3">
+      <label for="country" class="form-label">Country</label>
+      <select class="form-select" id="country">
+        <option value="">Choose...</option>
+        <option>USA</option>
+        <option>Canada</option>
+      </select>
+    </div>
+
+    <div class="mb-3 form-check">
+      <input required type="checkbox" class="form-check-input" id="a">
+      <label class="form-check-label" for="a">Agree to terms</label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', event => {
+      event.preventDefault(); // prevent form from submitting
+      form.classList.add('was-validated'); // stick the class
+    });
+  });
+</script>
+
+</body>
+</html>

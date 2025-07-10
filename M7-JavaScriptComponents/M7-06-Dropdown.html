@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero to Hero: Bootstrap ~ M7-06</title>
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <script src="assets/bootstrap.bundle.min.js"></script>
+</head>
+<body class="p-5">
+
+<h1 class="mb-5">Dropdown</h1>
+<div class="dropdown mb-5">  
+  <button class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" type="button">
+    Dropdown
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Item 1</a></li>
+    <li><a class="dropdown-item" href="#">Item 2</a></li>
+  </ul>
+</div>
+
+<div class="dropend mb-5">  
+  <button class="btn btn-warning dropdown-toggle" data-bs-auto-close="false" data-bs-toggle="dropdown" type="button">
+    Dropend
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Item 1</a></li>
+    <li><a class="dropdown-item" href="#">Item 2</a></li>
+  </ul>
+</div>
+<p>The following is an example how to combine a dropdown component and button group component.</p>
+
+<div class="dropup btn-group">  
+  <button class="btn btn-info">Button Group - Dropup</button>
+  <button class="btn btn-info dropdown-toggle" data-bs-auto-close="outside" data-bs-toggle="dropdown" type="button">    
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Item 1</a></li>
+    <li><a class="dropdown-item" href="#">Item 2</a></li>
+  </ul>
+</div>
+
+</body>
+</html>

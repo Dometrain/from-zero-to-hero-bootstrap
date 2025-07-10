@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero to Hero: Bootstrap ~ M7-03</title>
+  <link href="assets/bootstrap.min.css" rel="stylesheet">
+  <script src="assets/bootstrap.min.js"></script>
+</head>
+<body class="p-3">
+
+<h1 class="mb-5">Accordion</h1>
+<div class="accordion" id="accord">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#cFirst">
+          Accordion Header 1
+      </button>
+    </h2>
+    <div class="collapse" id="cFirst" data-bs-parent="#accord">
+      <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#cSecond">
+          Accordion Header 2
+      </button>
+    </h2>
+    <div class="collapse show" id="cSecond" data-bs-parent="#accord">
+      <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#cThird">
+          Accordion Header 3
+      </button>
+    </h2>
+    <div class="collapse" id="cThird" data-bs-parent="#accord">
+      <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
