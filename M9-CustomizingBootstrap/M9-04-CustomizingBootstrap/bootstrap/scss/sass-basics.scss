@@ -1,0 +1,30 @@
+
+
+
+// variables
+$temp-var: 1 !default;
+
+// maps
+$course-details: (
+    "course": "Zero to Hero: Bootstrap",
+    "author": "Jill"
+);
+
+// map get
+$name: map-get($course-details, "author" );
+
+
+// loop 
+$box-properties: (
+  "padding": 0.5rem,
+  "border-radius": 0.25rem,
+  "background-color": #1ab40f
+);
+
+.box {
+    @each $property, $value in $box-properties {
+        #{$property}: #{$value};
+    }
+}
+
+

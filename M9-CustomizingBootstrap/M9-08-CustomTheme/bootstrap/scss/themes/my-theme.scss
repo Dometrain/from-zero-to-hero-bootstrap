@@ -1,0 +1,178 @@
+$my-theme-primary:   #ff6f00; // bold orange
+$my-theme-secondary: #ab47bc; // vivid purple
+$my-theme-success:   #ff8f00; // lighter orange
+$my-theme-info:      #ce93d8; // lavender
+$my-theme-warning:   #ffa000; // amber
+$my-theme-danger:    #f06292; // pink‑red
+$my-theme-light:     #f8bbd0; // pink‑lavender
+$my-theme-dark:      #4a148c;  // deep violet
+
+$my-theme-colors: (
+  "primary":   $my-theme-primary, // bold orange
+  "secondary": $my-theme-secondary, // vivid purple
+  "success":   $my-theme-success, // lighter orange
+  "info":      $my-theme-info, // lavender
+  "warning":   $my-theme-warning, // amber
+  "danger":    $my-theme-danger, // pink‑red
+  "light":     $my-theme-light, // pink‑lavender
+  "dark":      $my-theme-dark  // deep violet
+);
+
+@include color-mode("my-theme", true) {
+  @each $name, $value in $my-theme-colors {
+    --#{$prefix}#{$name}: #{$value};
+    --#{$prefix}#{$name}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};
+    --#{$prefix}#{$name}-bg-subtle: #{shade-color($value, 80%)};
+    --#{$prefix}#{$name}-border-subtle: #{shade-color($value, 40%)};
+    --#{$prefix}#{$name}-text-emphasis: #{tint-color($value, 40%)};
+    --#{$prefix}#{$name}-rgb: #{red($value)}, #{green($value)}, #{blue($value)};    
+  }
+
+  --#{$prefix}link-color-rgb:   #{red(map-get($my-theme-colors, "primary"))}, #{green(map-get($my-theme-colors, "primary"))}, #{blue(map-get($my-theme-colors, "primary"))};    
+  --#{$prefix}tertiary-bg:       #{shade-color(map-get($my-theme-colors, "secondary"), 80%)};
+  --#{$prefix}tertiary-bg-rgb:   #{red(shade-color(map-get($my-theme-colors, "secondary"), 80%))}, #{green(shade-color(map-get($my-theme-colors, "secondary"), 80%))}, #{blue(shade-color(map-get($my-theme-colors, "secondary"), 80%))};
+  --#{$prefix}emphasis-color-rgb: #{red(map-get($my-theme-colors, "primary"))}, #{green(map-get($my-theme-colors, "primary"))}, #{blue(map-get($my-theme-colors, "primary"))};    
+
+  @each $name, $value in $my-theme-colors {
+
+    /* Buttons ------------- */
+    .btn-#{$name} {
+      @include button-variant($value, $value);
+    }
+
+    .btn-outline-#{$name} {
+      @include button-outline-variant($value);
+    }
+
+    /* Accent utilities ---- */
+    .text-bg-#{$name},
+    .bg-#{$name}           { background-color: $value !important; color: color-contrast($value) !important; }
+    .text-#{$name}         { color: $value !important; }
+    .border-#{$name}       { border-color: $value !important; }
+  }
+
+  /* Main colors */
+  --#{$prefix}body-bg:      #231733 !important;
+  --#{$prefix}body-color:   #fbe9e7;
+  --#{$prefix}link-color:   var(--#{$prefix}primary);
+  --#{$prefix}link-hover-color: #{adjust-color(map-get($my-theme-colors, "primary"), $lightness: 15%)};
+
+  --#{$prefix}primary:   #{$my-theme-primary};
+  --#{$prefix}secondary: #{$my-theme-secondary};
+  --#{$prefix}success:   #{$my-theme-success};
+  --#{$prefix}info:      #{$my-theme-info};
+  --#{$prefix}warning:   #{$my-theme-warning};
+  --#{$prefix}danger:    #{$my-theme-danger};
+  --#{$prefix}light:     #{$my-theme-light};
+  --#{$prefix}dark:      #{$my-theme-dark};
+
+  // RGB helpers (used by utilities such as bg‑opacity, text‑opacity, etc.)
+  --#{$prefix}primary-rgb:   #{red($my-theme-primary)}, #{green($my-theme-primary)}, #{blue($my-theme-primary)};
+  --#{$prefix}secondary-rgb: #{red($my-theme-secondary)}, #{green($my-theme-secondary)}, #{blue($my-theme-secondary)};
+  --#{$prefix}success-rgb:   #{red($my-theme-success)}, #{green($my-theme-success)}, #{blue($my-theme-success)};
+  --#{$prefix}info-rgb:      #{red($my-theme-info)}, #{green($my-theme-info)}, #{blue($my-theme-info)};
+  --#{$prefix}warning-rgb:   #{red($my-theme-warning)}, #{green($my-theme-warning)}, #{blue($my-theme-warning)};
+  --#{$prefix}danger-rgb:    #{red($my-theme-danger)}, #{green($my-theme-danger)}, #{blue($my-theme-danger)};
+  --#{$prefix}light-rgb:     #{red($my-theme-light)}, #{green($my-theme-light)}, #{blue($my-theme-light)};
+  --#{$prefix}dark-rgb:      #{red($my-theme-dark)}, #{green($my-theme-dark)}, #{blue($my-theme-dark)};
+
+  // Base layout
+  --#{$prefix}body-bg: #1e152a;
+  --#{$prefix}body-color: #fbe9e7;
+  --#{$prefix}emphasis-color: #ffffff;
+  --#{$prefix}secondary-color: #d1c4e9;
+  --#{$prefix}secondary-bg: #2b193d;
+  --#{$prefix}tertiary-color: #ce93d8;
+  --#{$prefix}tertiary-bg: #3d1f5f;
+
+  // Border colors
+  --#{$prefix}border-color: #8e44ad;
+  --#{$prefix}border-color-translucent: rgba(255, 255, 255, 0.1);
+
+  // Accent
+  --#{$prefix}link-color: #ff9800;
+  --#{$prefix}link-hover-color: #fbc02d;
+
+  // Code and highlights
+  --#{$prefix}mark-bg: #7b1fa2;
+  --#{$prefix}mark-color: #ffffff;
+  --#{$prefix}code-color: #ffcc80;
+  --#{$prefix}highlight-bg: #452157;
+
+  // Tables
+  --#{$prefix}table-color: #f3e5f5;
+  --#{$prefix}table-bg: transparent;
+  --#{$prefix}table-border-color: #6a1b9a;
+  --#{$prefix}table-striped-bg: rgba(255, 255, 255, 0.05);
+  --#{$prefix}table-hover-bg: rgba(255, 255, 255, 0.075);
+
+  // Buttons, forms, inputs
+  --#{$prefix}form-control-bg: #2e1a47;
+  --#{$prefix}form-control-disabled-bg: #1c1130;
+  --#{$prefix}form-control-color: #fbe9e7;
+  --#{$prefix}form-control-border-color: #7b1fa2;
+  --#{$prefix}form-select-bg: #2e1a47;
+  --#{$prefix}form-select-color: #fbe9e7;
+  --#{$prefix}form-check-bg: #1e152a;
+  --#{$prefix}form-check-border-color: #8e44ad;
+
+  // Dropdowns
+  --#{$prefix}dropdown-bg: #2b193d;
+  --#{$prefix}dropdown-color: #fbe9e7;
+  --#{$prefix}dropdown-border-color: #7b1fa2;
+  --#{$prefix}dropdown-divider-bg: rgba(255, 255, 255, 0.15);
+  --#{$prefix}dropdown-link-color: #fbe9e7;
+  --#{$prefix}dropdown-link-hover-color: #ffffff;
+  --#{$prefix}dropdown-link-hover-bg: #452157;
+
+  // Buttons
+  --#{$prefix}btn-close-color: #fbe9e7;
+  --#{$prefix}btn-close-bg: url("data:image/svg+xml,..."); // Keep SVG icon as-is
+  --#{$prefix}btn-close-white-filter: invert(1) grayscale(100%) brightness(200%);
+
+  // Tooltips, popovers
+  --#{$prefix}tooltip-bg: #7b1fa2;
+  --#{$prefix}tooltip-color: #fff;
+  --#{$prefix}popover-bg: #3d1f5f;
+  --#{$prefix}popover-border-color: #9c27b0;
+
+  // Toasts
+  --#{$prefix}toast-bg: #2b193d;
+  --#{$prefix}toast-border-color: #9c27b0;
+  --#{$prefix}toast-color: #fbe9e7;
+
+  // Modal
+  --#{$prefix}modal-content-bg: #1e152a;
+  --#{$prefix}modal-content-border-color: #8e44ad;
+
+  // Progress
+  --#{$prefix}progress-bg: #2e1a47;
+
+  // List groups
+  --#{$prefix}list-group-bg: #2e1a47;
+  --#{$prefix}list-group-border-color: #7b1fa2;
+
+  // Cards
+  --#{$prefix}card-bg: #2b193d;
+  --#{$prefix}card-border-color: #7b1fa2;
+
+  // Accordion
+  --#{$prefix}accordion-bg: #2e1a47;
+  --#{$prefix}accordion-button-color: #fbe9e7;
+  --#{$prefix}accordion-button-bg: #2e1a47;
+  --#{$prefix}accordion-button-active-bg: #452157;
+  --#{$prefix}accordion-button-active-color: #fff;
+
+  // Offcanvas
+  --#{$prefix}offcanvas-bg: #2e1a47;
+  --#{$prefix}offcanvas-color: #fbe9e7;
+
+  // Close
+  --#{$prefix}btn-close-color: #fbe9e7;
+
+  // Scrollbar (if you use custom scrollbars)
+  --#{$prefix}scrollbar-color: #ab47bc;
+  --#{$prefix}scrollbar-bg: #1e152a;
+
+  // Gradients or other advanced utilities (if needed)
+}

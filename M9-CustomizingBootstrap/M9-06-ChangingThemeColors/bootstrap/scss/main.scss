@@ -1,0 +1,55 @@
+@import "../../../bootstrap-source-files/scss/functions";
+
+
+// custom variables
+@import "./override-vars/color-vars.scss";
+@import "./override-vars/breadcrumb-vars.scss";
+
+
+// scss-docs-start import-stack
+// Configuration
+@import "../../../bootstrap-source-files/scss/variables";
+@import "../../../bootstrap-source-files/scss/variables-dark";
+@import "../../../bootstrap-source-files/scss/maps";
+@import "../../../bootstrap-source-files/scss/mixins";
+@import "../../../bootstrap-source-files/scss/utilities";
+
+// Layout & components
+@import "../../../bootstrap-source-files/scss/root";
+@import "../../../bootstrap-source-files/scss/reboot";
+@import "../../../bootstrap-source-files/scss/type";
+@import "../../../bootstrap-source-files/scss/images";
+@import "../../../bootstrap-source-files/scss/containers";
+@import "../../../bootstrap-source-files/scss/grid";
+@import "../../../bootstrap-source-files/scss/tables";
+@import "../../../bootstrap-source-files/scss/forms";
+@import "../../../bootstrap-source-files/scss/buttons";
+@import "../../../bootstrap-source-files/scss/transitions";
+@import "../../../bootstrap-source-files/scss/dropdown";
+@import "../../../bootstrap-source-files/scss/button-group";
+@import "../../../bootstrap-source-files/scss/nav";
+@import "../../../bootstrap-source-files/scss/navbar";
+@import "../../../bootstrap-source-files/scss/card";
+@import "../../../bootstrap-source-files/scss/accordion";
+@import "../../../bootstrap-source-files/scss/breadcrumb";
+@import "../../../bootstrap-source-files/scss/pagination";
+@import "../../../bootstrap-source-files/scss/badge";
+@import "../../../bootstrap-source-files/scss/alert";
+@import "../../../bootstrap-source-files/scss/progress";
+@import "../../../bootstrap-source-files/scss/list-group";
+@import "../../../bootstrap-source-files/scss/close";
+@import "../../../bootstrap-source-files/scss/toasts";
+@import "../../../bootstrap-source-files/scss/modal";
+@import "../../../bootstrap-source-files/scss/tooltip";
+@import "../../../bootstrap-source-files/scss/popover";
+@import "../../../bootstrap-source-files/scss/carousel";
+@import "../../../bootstrap-source-files/scss/spinners";
+@import "../../../bootstrap-source-files/scss/offcanvas";
+@import "../../../bootstrap-source-files/scss/placeholders";
+
+// Helpers
+@import "../../../bootstrap-source-files/scss/helpers";
+
+// Utilities
+@import "../../../bootstrap-source-files/scss/utilities/api";
+// scss-docs-end import-stack
